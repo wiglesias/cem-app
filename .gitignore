@@ -1,3 +1,9 @@
+###> our-app ###
+.DS_Store
+.idea/
+.vscode
+!/public/uploads/.gitkeep
+###< our-app ###
 
 ###> symfony/framework-bundle ###
 /.env.local
