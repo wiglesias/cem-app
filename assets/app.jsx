@@ -2,20 +2,30 @@
 
 import './styles/app.css';
 
-import React  from "react";
-import ReactDom from 'react-dom'
+import * as React from "react";
+import * as ReactDOM from "react-dom/client";
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+import Root from "./src/routes/root";
 
-function App () {
-    return (
-        <div>
-            <h1>HOla</h1>
-        </div>
-    )
-}
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Root />
+    }
+])
 
-const root = ReactDom.createRoot(document.getElementById('root'));
-root.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
-        <App />
+        <RouterProvider router={router} />
     </React.StrictMode>
-)
+);
+
+// const root = ReactDom.createRoot(document.getElementById('root'));
+// root.render(
+//     <React.StrictMode>
+//         <RouterProvider router={router} />
+//     </React.StrictMode>
+// )
